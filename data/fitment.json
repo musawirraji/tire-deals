@@ -1,0 +1,195 @@
+[
+  {
+    "year": 2019,
+    "make": "Toyota",
+    "model": "Camry",
+    "trim": "SE",
+    "fitsSizes": [
+      {
+        "width": 235,
+        "aspect": 45,
+        "rim": 18
+      },
+      {
+        "width": 215,
+        "aspect": 55,
+        "rim": 17
+      }
+    ]
+  },
+  {
+    "year": 2019,
+    "make": "Toyota",
+    "model": "Camry",
+    "trim": "LE",
+    "fitsSizes": [
+      {
+        "width": 215,
+        "aspect": 55,
+        "rim": 17
+      },
+      {
+        "width": 205,
+        "aspect": 65,
+        "rim": 16
+      }
+    ]
+  },
+  {
+    "year": 2020,
+    "make": "Honda",
+    "model": "Civic",
+    "trim": "Sport",
+    "fitsSizes": [
+      {
+        "width": 235,
+        "aspect": 40,
+        "rim": 18
+      },
+      {
+        "width": 215,
+        "aspect": 55,
+        "rim": 16
+      }
+    ]
+  },
+  {
+    "year": 2021,
+    "make": "Ford",
+    "model": "F-150",
+    "trim": "XLT",
+    "fitsSizes": [
+      {
+        "width": 265,
+        "aspect": 70,
+        "rim": 17
+      },
+      {
+        "width": 275,
+        "aspect": 55,
+        "rim": 20
+      }
+    ]
+  },
+  {
+    "year": 2018,
+    "make": "Subaru",
+    "model": "Outback",
+    "trim": "Premium",
+    "fitsSizes": [
+      {
+        "width": 225,
+        "aspect": 65,
+        "rim": 17
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "make": "Tesla",
+    "model": "Model 3",
+    "trim": "Long Range",
+    "fitsSizes": [
+      {
+        "width": 235,
+        "aspect": 45,
+        "rim": 18
+      },
+      {
+        "width": 235,
+        "aspect": 40,
+        "rim": 19
+      }
+    ]
+  },
+  {
+    "year": 2019,
+    "make": "BMW",
+    "model": "330i",
+    "trim": "Sport",
+    "fitsSizes": [
+      {
+        "width": 225,
+        "aspect": 45,
+        "rim": 18
+      },
+      {
+        "width": 255,
+        "aspect": 40,
+        "rim": 18
+      }
+    ]
+  },
+  {
+    "year": 2020,
+    "make": "Jeep",
+    "model": "Wrangler",
+    "trim": "Sport",
+    "fitsSizes": [
+      {
+        "width": 245,
+        "aspect": 75,
+        "rim": 17
+      },
+      {
+        "width": 285,
+        "aspect": 70,
+        "rim": 17
+      }
+    ]
+  },
+  {
+    "year": 2021,
+    "make": "Chevrolet",
+    "model": "Silverado 1500",
+    "trim": "LT",
+    "fitsSizes": [
+      {
+        "width": 265,
+        "aspect": 65,
+        "rim": 18
+      },
+      {
+        "width": 275,
+        "aspect": 55,
+        "rim": 20
+      }
+    ]
+  },
+  {
+    "year": 2017,
+    "make": "Mazda",
+    "model": "CX-5",
+    "trim": "Touring",
+    "fitsSizes": [
+      {
+        "width": 225,
+        "aspect": 65,
+        "rim": 17
+      },
+      {
+        "width": 225,
+        "aspect": 55,
+        "rim": 19
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "make": "Hyundai",
+    "model": "Elantra",
+    "trim": "SEL",
+    "fitsSizes": [
+      {
+        "width": 215,
+        "aspect": 45,
+        "rim": 17
+      },
+      {
+        "width": 205,
+        "aspect": 55,
+        "rim": 16
+      }
+    ]
+  }
+]

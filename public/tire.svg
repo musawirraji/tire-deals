@@ -1,0 +1,56 @@
+<svg width="520" height="520" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tire">
+  <defs>
+    <radialGradient id="rubber" cx="42%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#2a2d2a"/>
+      <stop offset="55%" stop-color="#161816"/>
+      <stop offset="100%" stop-color="#0a0b0a"/>
+    </radialGradient>
+    <radialGradient id="rim" cx="42%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#3a3f3a"/>
+      <stop offset="100%" stop-color="#1a1c1a"/>
+    </radialGradient>
+    <linearGradient id="spoke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c8d6cc"/>
+      <stop offset="100%" stop-color="#6f7a72"/>
+    </linearGradient>
+    <radialGradient id="hub" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#b6f23b"/>
+      <stop offset="100%" stop-color="#6f9a1f"/>
+    </radialGradient>
+  </defs>
+
+  <!-- sidewall / tire -->
+  <circle cx="260" cy="260" r="246" fill="url(#rubber)"/>
+  <circle cx="260" cy="260" r="246" fill="none" stroke="#000" stroke-opacity="0.5" stroke-width="2"/>
+
+  <!-- tread blocks around the edge -->
+  <g stroke="#0a0b0a" stroke-width="6" opacity="0.65">
+    <circle cx="260" cy="260" r="232" fill="none" stroke-dasharray="10 14"/>
+    <circle cx="260" cy="260" r="218" fill="none" stroke-dasharray="6 18"/>
+  </g>
+
+  <!-- sidewall lettering arc hint -->
+  <circle cx="260" cy="260" r="196" fill="none" stroke="#000" stroke-opacity="0.35" stroke-width="10"/>
+  <circle cx="260" cy="260" r="178" fill="none" stroke="#2a2d2a" stroke-width="2" stroke-opacity="0.6"/>
+
+  <!-- wheel rim -->
+  <circle cx="260" cy="260" r="168" fill="url(#rim)" stroke="#000" stroke-opacity="0.4" stroke-width="2"/>
+  <circle cx="260" cy="260" r="150" fill="#101210"/>
+
+  <!-- spokes (5) -->
+  <g fill="url(#spoke)">
+    <g transform="rotate(0 260 260)"><path d="M260 122 C 276 122 286 150 282 196 L 238 196 C 234 150 244 122 260 122 Z"/></g>
+    <g transform="rotate(72 260 260)"><path d="M260 122 C 276 122 286 150 282 196 L 238 196 C 234 150 244 122 260 122 Z"/></g>
+    <g transform="rotate(144 260 260)"><path d="M260 122 C 276 122 286 150 282 196 L 238 196 C 234 150 244 122 260 122 Z"/></g>
+    <g transform="rotate(216 260 260)"><path d="M260 122 C 276 122 286 150 282 196 L 238 196 C 234 150 244 122 260 122 Z"/></g>
+    <g transform="rotate(288 260 260)"><path d="M260 122 C 276 122 286 150 282 196 L 238 196 C 234 150 244 122 260 122 Z"/></g>
+  </g>
+
+  <!-- hub -->
+  <circle cx="260" cy="260" r="46" fill="url(#hub)"/>
+  <circle cx="260" cy="260" r="46" fill="none" stroke="#0a0b0a" stroke-opacity="0.35" stroke-width="3"/>
+  <circle cx="260" cy="260" r="16" fill="#101210"/>
+
+  <!-- specular highlight -->
+  <ellipse cx="190" cy="170" rx="120" ry="70" fill="#ffffff" opacity="0.05"/>
+</svg>
