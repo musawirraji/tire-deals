@@ -162,6 +162,7 @@ function Select({
       <select
         value={value}
         disabled={disabled}
+        autoComplete="off"
         onChange={(e) => onChange(e.target.value)}
         className="w-full appearance-none rounded-xl border border-line bg-surface-2 px-3.5 py-3 text-sm text-ink outline-none transition-colors focus:border-accent disabled:cursor-not-allowed disabled:opacity-40"
         style={{
