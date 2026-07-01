@@ -28,17 +28,22 @@ directly. AutoSync feed implements the same interface in production: swapping it
 is an implementation detail, not a rewrite. 84 tires / 8 brands / 11 vehicle
 fitments; every vehicle returns fitting stock.
 
-## Design tokens (dark + lime-green)
-| token | value | use |
-|-------|-------|-----|
-| `bg` | `#0B0C0B` | page background |
-| `surface` / `surface-2` | `#161816` / `#1F221F` | cards, panels |
-| `line` | `rgba(255,255,255,.10)` | thin borders |
-| `ink` / `muted` | `#F0F0F0` / `#9AA29A` | text |
-| `accent` / `accent-700` | `#B6F23B` / `#86B81F` | lime brand accent |
-Radii: cards 16px, large containers up to 80px, buttons full-pill. Green radial
-glow behind hero (`.td-glow`). Accent pills have dark text. Bold grotesk
-headings (Inter stand-in). Use Tailwind classes like `bg-bg`, `text-accent`, etc.
+## Design tokens (LIGHT theme + dark feature cards + lime-green)
+The Figma is a **light page** with **dark rounded feature cards** and a green
+accent — NOT an all-dark theme. Two contexts:
+| context | token → value | use |
+|---------|---------------|-----|
+| light page | `bg` `#EDEFE9` · `bg-2` `#F6F7F3` · `ink` `#14160F` · `muted` `#6B726A` · `line` `rgba(20,22,15,.10)` | page, light cards, dark text |
+| dark cards | `dark` `#0C0E0B` · `dark-2/3` · `cream` `#F2F4EE` · `dark-muted` `#9AA295` · `dark-line` `rgba(255,255,255,.10)` | hero, guided shopping, expert, footer |
+| accent | `accent` `#8ED81F` · `accent-bright` `#A6E635` · `accent-700` `#6FAE16` | lime; **on light use `accent-700` for text** (contrast); pills use `text-dark` |
+Green top utility bar (`bg-accent`). Giant green wordmark footer. Radii: cards
+18px, hero cards up to 40px, buttons full-pill. `.td-glow` green radial glow.
+Home sections: Hero (dark card + radial dial) · TrustBadges · HowItWorks ·
+Deals (Unsplash photos, `lib/images.ts`) · PopularTires · GuidedShopping ·
+Installers (SVG map) · Promises · TreadTrial · ExpertAssistance · Journey.
+Imagery = verified Unsplash IDs in `lib/images.ts` via plain `<img>` (no
+next/image config). Dev gotcha: editing `@theme` tokens may need a dev-server
+restart (Turbopack can serve stale compiled CSS).
 
 ## Conventions
 - Mobile-first; build desktop per phase then layer mobile. Verify 360/390/768/1024+.
