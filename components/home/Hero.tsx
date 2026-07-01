@@ -1,56 +1,57 @@
-import { MapPin, Star } from "lucide-react";
+import { MapPin, ThumbsUp } from "lucide-react";
 import { RadialSearch } from "./RadialSearch";
+import { IMG } from "@/lib/images";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-5 pb-16 pt-10 md:px-6 md:pt-16">
-      <div className="mx-auto max-w-6xl text-center">
-        <p className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface/60 px-4 py-1.5 text-xs text-muted">
-          <span className="flex text-accent">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} size={12} fill="currentColor" strokeWidth={0} />
-            ))}
-          </span>
-          4.8 from 50,000+ verified reviews
-        </p>
+    <section className="px-3 pt-3 md:px-5">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-hero bg-dark px-5 pb-14 pt-10 text-cream md:px-10 md:pb-16 md:pt-14">
+        {/* moody photo + glow backdrop */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={IMG.heroCar}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/40 to-dark" />
+        <div className="td-glow pointer-events-none absolute left-1/2 top-1/2 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/3" />
 
-        <h1 className="mx-auto max-w-4xl text-balance text-[clamp(2.4rem,8vw,5.25rem)] font-extrabold leading-[0.98] tracking-tight">
-          The Lowest Tire Prices Online.{" "}
-          <span className="relative whitespace-nowrap text-accent">
-            Period.
-          </span>
-        </h1>
+        <div className="relative text-center">
+          <h1 className="mx-auto max-w-4xl text-[clamp(2.5rem,7.5vw,5.5rem)] font-extrabold leading-[0.95] tracking-tight">
+            The Lowest Tire Prices Online.{" "}
+            <span className="text-accent">Period.</span>
+          </h1>
+          <p className="mx-auto mt-5 text-lg font-semibold">
+            It&rsquo;s Not Just Tread, It&rsquo;s Trust.
+          </p>
+          <p className="mx-auto mt-1 text-sm text-dark-muted">
+            Good tires don&rsquo;t have to be expensive.
+          </p>
 
-        <p className="mx-auto mt-5 max-w-xl text-lg font-semibold text-ink">
-          It&rsquo;s Not Just Tread, It&rsquo;s Trust.
-        </p>
-        <p className="mx-auto mt-1 max-w-xl text-sm text-muted">
-          Good tires don&rsquo;t have to be expensive.
-        </p>
+          <div className="relative mt-8">
+            <StatCard
+              className="left-0 top-4 hidden lg:flex"
+              top={
+                <span className="flex items-center gap-1.5">
+                  <ThumbsUp size={15} className="text-accent" /> 4.6
+                </span>
+              }
+              label="Rated by 4,541 verified customers"
+            />
+            <StatCard
+              className="right-0 top-10 hidden lg:flex"
+              top={
+                <span className="flex items-center gap-1.5 text-cream">
+                  <MapPin size={15} className="text-accent" /> Near 75073
+                </span>
+              }
+              big="142"
+              label="Tires & installers near you"
+            />
 
-        {/* dial + floating stat cards */}
-        <div className="relative mt-10">
-          <StatCard
-            className="left-0 top-2 hidden lg:flex"
-            top={
-              <span className="flex items-center gap-1 text-accent">
-                <Star size={14} fill="currentColor" strokeWidth={0} /> 4.6
-              </span>
-            }
-            label="Rated by 4,541 verified customers"
-          />
-          <StatCard
-            className="right-0 top-10 hidden lg:flex"
-            top={
-              <span className="flex items-center gap-1 text-ink">
-                <MapPin size={14} className="text-accent" /> 75073
-              </span>
-            }
-            label="Tires & installers near you"
-            big="142"
-          />
-
-          <RadialSearch />
+            <RadialSearch />
+          </div>
         </div>
       </div>
     </section>
@@ -70,11 +71,11 @@ function StatCard({
 }) {
   return (
     <div
-      className={`absolute z-20 w-44 flex-col items-start gap-1 rounded-2xl border border-line bg-surface/80 p-4 text-left backdrop-blur ${className}`}
+      className={`absolute z-20 w-48 flex-col items-start gap-1 rounded-2xl border border-dark-line bg-dark-2/80 p-4 text-left backdrop-blur ${className}`}
     >
       <div className="text-sm font-bold">{top}</div>
       {big && <div className="text-3xl font-extrabold text-accent">{big}</div>}
-      <p className="text-xs leading-snug text-muted">{label}</p>
+      <p className="text-xs leading-snug text-dark-muted">{label}</p>
     </div>
   );
 }

@@ -22,7 +22,7 @@ export function Stars({
         ))}
       </span>
       <span
-        className="absolute inset-0 flex overflow-hidden text-accent"
+        className="absolute inset-0 flex overflow-hidden text-accent-700"
         style={{ width: `${pct}%` }}
       >
         {Array.from({ length: 5 }).map((_, i) => (

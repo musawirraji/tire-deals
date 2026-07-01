@@ -20,12 +20,12 @@ export function MobileFilters({
     <>
       <button
         onClick={() => setOpen(true)}
-        className="flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2.5 text-sm font-semibold text-ink lg:hidden"
+        className="flex items-center gap-2 rounded-full border border-line bg-bg-2 px-4 py-2.5 text-sm font-semibold text-ink lg:hidden"
       >
         <SlidersHorizontal size={15} />
         Filters
         {activeCount > 0 && (
-          <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1 text-xs font-bold text-bg">
+          <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1 text-xs font-bold text-dark">
             {activeCount}
           </span>
         )}
@@ -54,7 +54,7 @@ export function MobileFilters({
             <div className="border-t border-line p-4">
               <button
                 onClick={() => setOpen(false)}
-                className="w-full rounded-full bg-accent py-3 text-sm font-bold text-bg"
+                className="w-full rounded-full bg-accent py-3 text-sm font-bold text-dark"
               >
                 Show results
               </button>

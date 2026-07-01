@@ -34,7 +34,7 @@ export default async function ResultsPage({
       <div className="mx-auto max-w-7xl px-5 py-8 md:px-6">
         {/* context header */}
         <nav className="mb-4 text-xs text-muted">
-          <Link href="/" className="hover:text-accent">
+          <Link href="/" className="hover:text-accent-700">
             Home
           </Link>{" "}
           / <span className="text-ink">Shop Tires</span>
@@ -99,8 +99,8 @@ export default async function ResultsPage({
 
 function EmptyState() {
   return (
-    <div className="flex flex-col items-center gap-4 rounded-card border border-dashed border-line bg-surface/40 px-6 py-16 text-center">
-      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-surface-2 text-accent">
+    <div className="flex flex-col items-center gap-4 rounded-card border border-dashed border-line-strong bg-bg-2 px-6 py-16 text-center">
+      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent/15 text-accent-700">
         <SearchX size={26} />
       </span>
       <h2 className="text-lg font-bold">Not finding what you&rsquo;re looking for?</h2>
@@ -110,7 +110,7 @@ function EmptyState() {
       </p>
       <Link
         href="/"
-        className="rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-bg"
+        className="rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-dark"
       >
         Start a new search
       </Link>

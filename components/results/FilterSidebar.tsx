@@ -83,7 +83,7 @@ export function FilterSidebar({
         {activeCount > 0 && (
           <button
             onClick={clearAll}
-            className="text-xs font-semibold text-accent hover:underline"
+            className="text-xs font-semibold text-accent-700 hover:underline"
           >
             Clear all ({activeCount})
           </button>
@@ -217,7 +217,7 @@ function CheckRow({
       <span className="flex items-center gap-2.5">
         <span
           className={`flex h-4 w-4 items-center justify-center rounded border transition-colors ${
-            checked ? "border-accent bg-accent text-bg" : "border-line-strong"
+            checked ? "border-accent bg-accent text-dark" : "border-line-strong"
           }`}
         >
           {checked && <Check size={12} strokeWidth={3} />}
@@ -249,8 +249,8 @@ function Chip({
       onClick={onToggle}
       className={`rounded-lg border px-2.5 py-1.5 text-xs font-semibold transition-colors ${
         checked
-          ? "border-accent bg-accent text-bg"
-          : "border-line bg-surface-2 text-ink hover:border-accent/60"
+          ? "border-accent bg-accent text-dark"
+          : "border-line bg-bg-2 text-ink hover:border-accent-700/60"
       }`}
     >
       {label}

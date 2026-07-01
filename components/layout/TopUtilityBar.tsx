@@ -2,22 +2,23 @@ import { Star } from "lucide-react";
 
 export function TopUtilityBar() {
   return (
-    <div className="hidden border-b border-line bg-black/40 text-xs text-muted md:block">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
-        <span>
-          Rated <span className="text-ink">&ldquo;Excellent&rdquo;</span> by Shopper Approved
+    <div className="bg-accent text-[13px] font-medium text-dark">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-5 py-2 md:px-6">
+        <span className="hidden sm:inline">
+          Rated <span className="font-bold">&ldquo;Excellent&rdquo;</span> by
+          Shopper Approved
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="flex text-accent">
+          <span className="font-bold">4.7</span>
+          <span className="flex">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} size={12} fill="currentColor" strokeWidth={0} />
+              <Star key={i} size={13} fill="currentColor" strokeWidth={0} />
             ))}
           </span>
-          <span className="text-ink">4.7</span>
-          <span>(80,558 reviews)</span>
+          <span className="hidden xs:inline">(60,156 reviews)</span>
         </span>
-        <span>
-          <span className="text-ink">95%</span> Would Buy Again
+        <span className="hidden sm:inline">
+          <span className="font-bold">95%</span> Would Buy Again
         </span>
       </div>
     </div>

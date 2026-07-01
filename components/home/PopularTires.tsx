@@ -2,10 +2,10 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { tireProvider } from "@/lib/tire-provider";
 import { ProductCard } from "@/components/results/ProductCard";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export async function PopularTires() {
   const all = await tireProvider.getAll();
-  // pick the highest-rated tire per brand, then take the top 8 by reviews
   const byBrand = new Map<string, (typeof all)[number]>();
   for (const t of all) {
     const cur = byBrand.get(t.brand);
@@ -19,16 +19,14 @@ export async function PopularTires() {
     <section className="mx-auto max-w-7xl px-5 py-16 md:px-6">
       <div className="mb-7 flex items-end justify-between gap-4">
         <div>
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-accent">
-            • Popular right now
-          </p>
-          <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
+          <Eyebrow>Popular right now</Eyebrow>
+          <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl">
             Top-rated tires
           </h2>
         </div>
         <Link
           href="/results"
-          className="hidden items-center gap-1.5 rounded-full border border-line px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-accent hover:text-accent sm:flex"
+          className="hidden items-center gap-1.5 rounded-full border border-line-strong px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink sm:flex"
         >
           View all <ArrowRight size={16} />
         </Link>

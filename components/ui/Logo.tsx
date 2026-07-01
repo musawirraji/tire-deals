@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-export function Logo({ className = "" }: { className?: string }) {
+export function Logo({
+  className = "",
+  tone = "dark",
+}: {
+  className?: string;
+  tone?: "dark" | "light";
+}) {
+  const text = tone === "light" ? "text-cream" : "text-ink";
   return (
     <Link
       href="/"
@@ -8,19 +15,30 @@ export function Logo({ className = "" }: { className?: string }) {
       aria-label="TireDeals home"
     >
       <svg
-        width="26"
-        height="26"
-        viewBox="0 0 26 26"
+        width="28"
+        height="28"
+        viewBox="0 0 28 28"
         fill="none"
         aria-hidden
-        className="shrink-0 transition-transform duration-300 group-hover:rotate-90"
+        className="shrink-0"
       >
-        <circle cx="13" cy="13" r="12" fill="#0b0c0b" stroke="#b6f23b" strokeWidth="2" />
-        <circle cx="13" cy="13" r="5.5" fill="none" stroke="#b6f23b" strokeWidth="2" />
-        <circle cx="13" cy="13" r="1.6" fill="#b6f23b" />
+        <circle cx="14" cy="14" r="13" className="fill-ink" />
+        <circle
+          cx="14"
+          cy="14"
+          r="13"
+          fill="none"
+          stroke="#8ed81f"
+          strokeWidth="1.5"
+        />
+        <circle cx="14" cy="14" r="6" fill="none" stroke="#8ed81f" strokeWidth="2" />
+        <g stroke="#8ed81f" strokeWidth="1.4" strokeLinecap="round">
+          <path d="M14 1.5v4M14 22.5v4M1.5 14h4M22.5 14h4" />
+        </g>
+        <circle cx="14" cy="14" r="2" fill="#8ed81f" />
       </svg>
-      <span className="text-lg font-extrabold tracking-tight">
-        Tire<span className="text-accent">Deals</span>
+      <span className={`text-lg font-extrabold tracking-tight ${text}`}>
+        Tire<span className="text-accent-700">Deals</span>
       </span>
     </Link>
   );

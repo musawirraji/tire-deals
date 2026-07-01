@@ -17,10 +17,10 @@ export function ProductCard({
   return (
     <Link
       href={href}
-      className="group flex flex-col overflow-hidden rounded-card border border-line bg-surface transition-all hover:-translate-y-1 hover:border-accent/50"
+      className="group flex flex-col overflow-hidden rounded-card border border-line bg-bg-2 transition-all hover:-translate-y-1 hover:border-accent-700/40 hover:shadow-soft"
     >
-      <div className="relative flex items-center justify-center bg-gradient-to-b from-surface-2 to-surface px-6 py-7">
-        <div className="td-glow pointer-events-none absolute inset-x-8 inset-y-2 opacity-50" />
+      <div className="relative flex items-center justify-center bg-dark px-6 py-7">
+        <div className="td-glow pointer-events-none absolute inset-x-8 inset-y-2 opacity-60" />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={tire.imageUrl}
@@ -29,7 +29,7 @@ export function ProductCard({
           draggable={false}
         />
         {fits && (
-          <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-accent px-2.5 py-1 text-[11px] font-bold text-bg">
+          <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-accent px-2.5 py-1 text-[11px] font-bold text-dark">
             <BadgeCheck size={13} />
             Fits your vehicle
           </span>
@@ -37,11 +37,11 @@ export function ProductCard({
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <div className="flex items-center justify-between text-xs text-muted">
-          <span className="font-semibold uppercase tracking-wide text-accent">
+        <div className="flex items-center justify-between text-xs">
+          <span className="font-bold uppercase tracking-wide text-accent-700">
             {tire.brand}
           </span>
-          <span className="rounded-md bg-surface-2 px-2 py-0.5">
+          <span className="rounded-md bg-black/5 px-2 py-0.5 text-muted">
             {typeLabel(tire.type)}
           </span>
         </div>
@@ -50,12 +50,12 @@ export function ProductCard({
 
         <p className="font-mono text-xs text-muted">
           {sizeToString(tire.size)} · {tire.speedRating}
-          {tire.loadIndex} speed/load
+          {tire.loadIndex}
         </p>
 
         <div className="flex items-center gap-1.5 text-xs text-muted">
           <Stars rating={tire.rating} size={13} />
-          <span className="text-ink">{tire.rating.toFixed(1)}</span>
+          <span className="font-semibold text-ink">{tire.rating.toFixed(1)}</span>
           <span>({formatCount(tire.reviewCount)})</span>
         </div>
 
@@ -66,7 +66,7 @@ export function ProductCard({
             </span>
             <span className="block text-[11px] text-muted">per tire</span>
           </div>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-bg transition-transform group-hover:scale-110">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-dark transition-transform group-hover:scale-110">
             <ShoppingCart size={17} />
           </span>
         </div>

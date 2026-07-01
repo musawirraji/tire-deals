@@ -57,24 +57,19 @@ export function RadialSearch() {
 
   return (
     <div className="flex w-full flex-col items-center gap-7">
-      {/* The dial */}
       <div className="relative flex items-center justify-center px-12 sm:px-16">
         <button
           onClick={() => rotate(-1)}
           aria-label="Previous category"
-          className="absolute left-0 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-surface/80 text-ink backdrop-blur transition-colors hover:border-accent hover:text-accent"
+          className="absolute left-0 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-dark-line bg-dark-2/80 text-cream backdrop-blur transition-colors hover:border-accent hover:text-accent"
         >
           <ChevronLeft size={20} />
         </button>
 
         <div className="relative aspect-square w-[clamp(230px,64vw,380px)]">
-          {/* glow */}
           <div className="td-glow pointer-events-none absolute inset-[-14%]" />
+          <div className="td-spin-slow absolute inset-[10%] rounded-full border border-dashed border-dark-line" />
 
-          {/* rotating ring */}
-          <div className="td-spin-slow absolute inset-[10%] rounded-full border border-dashed border-line" />
-
-          {/* tire */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/tire.svg"
@@ -83,19 +78,17 @@ export function RadialSearch() {
             draggable={false}
           />
 
-          {/* center label */}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <div className="flex flex-col items-center gap-0.5 rounded-full bg-bg/75 px-5 py-3 text-center backdrop-blur-sm">
-              <span className="text-[10px] uppercase tracking-[0.22em] text-muted">
-                Search tires
+            <div className="flex flex-col items-center gap-0.5 rounded-full bg-dark/80 px-5 py-3 text-center backdrop-blur-sm">
+              <span className="flex items-center gap-1 text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+                <Search size={11} /> Search tires
               </span>
-              <span className="text-lg font-extrabold leading-none text-ink">
+              <span className="text-lg font-extrabold leading-none text-cream">
                 {activeCat.label}
               </span>
             </div>
           </div>
 
-          {/* category nodes */}
           {CATEGORIES.map((c) => {
             const Icon = c.icon;
             const on = c.key === active;
@@ -105,8 +98,8 @@ export function RadialSearch() {
                 onClick={() => setActive(c.key)}
                 className={`absolute z-10 flex items-center gap-1.5 rounded-full border px-3 py-2 text-sm font-semibold backdrop-blur transition-all ${POS_CLASS[c.pos]} ${
                   on
-                    ? "border-accent bg-accent text-bg shadow-glow"
-                    : "border-line bg-surface/90 text-ink hover:border-accent/60"
+                    ? "border-accent bg-accent text-dark shadow-glow"
+                    : "border-dark-line bg-dark-2/90 text-cream hover:border-accent/60"
                 }`}
                 aria-pressed={on}
               >
@@ -120,14 +113,13 @@ export function RadialSearch() {
         <button
           onClick={() => rotate(1)}
           aria-label="Next category"
-          className="absolute right-0 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-surface/80 text-ink backdrop-blur transition-colors hover:border-accent hover:text-accent"
+          className="absolute right-0 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-dark-line bg-dark-2/80 text-cream backdrop-blur transition-colors hover:border-accent hover:text-accent"
         >
           <ChevronRight size={20} />
         </button>
       </div>
 
-      {/* The control panel for the active category */}
-      <div className="w-full max-w-xl rounded-[28px] border border-line bg-surface/70 p-5 backdrop-blur sm:p-6">
+      <div className="w-full max-w-xl rounded-[28px] border border-dark-line bg-dark-2/80 p-5 backdrop-blur sm:p-6">
         {active === "vehicle" && <VehicleForm />}
         {active === "size" && <SizeForm tires={allTires} />}
         {active === "type" && <TypeForm />}
@@ -136,8 +128,6 @@ export function RadialSearch() {
     </div>
   );
 }
-
-/* ---------- shared select ---------- */
 
 function Select({
   label,
@@ -156,7 +146,7 @@ function Select({
 }) {
   return (
     <label className="flex flex-col gap-1.5">
-      <span className="text-xs font-medium uppercase tracking-wide text-muted">
+      <span className="text-xs font-medium uppercase tracking-wide text-dark-muted">
         {label}
       </span>
       <select
@@ -164,10 +154,10 @@ function Select({
         disabled={disabled}
         autoComplete="off"
         onChange={(e) => onChange(e.target.value)}
-        className="w-full appearance-none rounded-xl border border-line bg-surface-2 px-3.5 py-3 text-sm text-ink outline-none transition-colors focus:border-accent disabled:cursor-not-allowed disabled:opacity-40"
+        className="w-full appearance-none rounded-xl border border-dark-line bg-dark-3 px-3.5 py-3 text-sm text-cream outline-none transition-colors focus:border-accent disabled:cursor-not-allowed disabled:opacity-40"
         style={{
           backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239aa29a' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239aa295' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "right 0.9rem center",
           backgroundSize: "12px",
@@ -195,15 +185,13 @@ function SearchButton({
     <button
       type="submit"
       disabled={disabled}
-      className="flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3.5 text-sm font-bold text-bg transition-all hover:bg-accent-700 disabled:cursor-not-allowed disabled:opacity-40"
+      className="flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3.5 text-sm font-bold text-dark transition-all hover:bg-accent-bright disabled:cursor-not-allowed disabled:opacity-40"
     >
       <Search size={17} />
       {children}
     </button>
   );
 }
-
-/* ---------- vehicle ---------- */
 
 function VehicleForm() {
   const router = useRouter();
@@ -264,8 +252,6 @@ function VehicleForm() {
   );
 }
 
-/* ---------- size ---------- */
-
 function SizeForm({ tires }: { tires: TireProduct[] }) {
   const router = useRouter();
   const [width, setWidth] = useState("");
@@ -325,19 +311,17 @@ function SizeForm({ tires }: { tires: TireProduct[] }) {
         <Select label="Aspect" placeholder="Ratio" value={aspect} onChange={(v) => { setAspect(v); setRim(""); }} options={aspects} disabled={!width} />
         <Select label="Rim" placeholder="Diameter" value={rim} onChange={setRim} options={rims.map((r) => `R${r}`)} disabled={!aspect} />
       </div>
-      <div className="flex items-center justify-center gap-2 text-sm text-muted">
+      <div className="flex items-center justify-center gap-2 text-sm text-dark-muted">
         Your size:
-        <span className="rounded-md bg-surface-2 px-2.5 py-1 font-mono font-semibold text-accent">
+        <span className="rounded-md bg-dark-3 px-2.5 py-1 font-mono font-semibold text-accent">
           {width || "—"}/{aspect || "—"}
-          {rim ? rim.replace("R", "R") : "R—"}
+          {rim || "R—"}
         </span>
       </div>
       <SearchButton disabled={!ready}>Search this size</SearchButton>
     </form>
   );
 }
-
-/* ---------- type ---------- */
 
 function TypeForm() {
   const router = useRouter();
@@ -350,7 +334,7 @@ function TypeForm() {
       }}
       className="flex flex-col gap-4"
     >
-      <span className="text-xs font-medium uppercase tracking-wide text-muted">
+      <span className="text-xs font-medium uppercase tracking-wide text-dark-muted">
         Tire type
       </span>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -361,8 +345,8 @@ function TypeForm() {
             onClick={() => setType(t)}
             className={`rounded-xl border px-3 py-3 text-sm font-semibold transition-colors ${
               type === t
-                ? "border-accent bg-accent text-bg"
-                : "border-line bg-surface-2 text-ink hover:border-accent/60"
+                ? "border-accent bg-accent text-dark"
+                : "border-dark-line bg-dark-3 text-cream hover:border-accent/60"
             }`}
           >
             {typeLabel(t)}
@@ -373,8 +357,6 @@ function TypeForm() {
     </form>
   );
 }
-
-/* ---------- brand ---------- */
 
 function BrandForm() {
   const router = useRouter();
@@ -393,7 +375,7 @@ function BrandForm() {
       }}
       className="flex flex-col gap-4"
     >
-      <span className="text-xs font-medium uppercase tracking-wide text-muted">
+      <span className="text-xs font-medium uppercase tracking-wide text-dark-muted">
         Shop by brand
       </span>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -404,8 +386,8 @@ function BrandForm() {
             onClick={() => setBrand(b)}
             className={`rounded-xl border px-2 py-3 text-sm font-semibold transition-colors ${
               brand === b
-                ? "border-accent bg-accent text-bg"
-                : "border-line bg-surface-2 text-ink hover:border-accent/60"
+                ? "border-accent bg-accent text-dark"
+                : "border-dark-line bg-dark-3 text-cream hover:border-accent/60"
             }`}
           >
             {b}
