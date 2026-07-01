@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { SearchX } from "lucide-react";
+import { BadgeCheck, SearchX } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { ProductCard } from "@/components/results/ProductCard";
 import { FilterSidebar } from "@/components/results/FilterSidebar";
@@ -42,10 +42,29 @@ export default async function ResultsPage({
 
         <div className="flex flex-col gap-1">
           <h1 className="text-2xl font-extrabold tracking-tight md:text-3xl">
-            {ctx.heading}
+            {ctx.heading}{" "}
+            <span className="text-muted">({results.length})</span>
           </h1>
           <p className="text-sm text-muted">{ctx.subheading}</p>
         </div>
+
+        {ctx.narrowed && (
+          <div className="mt-4 flex items-start gap-3 rounded-card border border-accent-700/40 bg-accent/15 px-4 py-3.5">
+            <BadgeCheck size={20} className="mt-0.5 shrink-0 text-accent-700" />
+            <p className="text-sm text-ink">
+              {ctx.fits ? (
+                <>
+                  Showing <span className="font-bold">only tires confirmed to fit</span> your{" "}
+                  {ctx.label}. Sizes that don&rsquo;t fit are filtered out.
+                </>
+              ) : (
+                <>
+                  Showing <span className="font-bold">only tires in size {ctx.label}</span>. Other sizes are filtered out.
+                </>
+              )}
+            </p>
+          </div>
+        )}
 
         <div className="mt-5 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">

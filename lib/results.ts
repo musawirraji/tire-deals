@@ -52,7 +52,9 @@ export interface ResultsContext {
   heading: string;
   subheading: string;
   by: string;
+  label: string; // vehicle/size string, e.g. "2019 Toyota Camry SE" or "225/65R17"
   fits: boolean; // whether to badge cards as "fits your vehicle"
+  narrowed: boolean; // results are filtered to a vehicle/size (show fitment banner)
 }
 
 const list = (p: SearchParams, key: string): string[] => {
@@ -99,13 +101,16 @@ async function baseSet(
       trim: firstParam(p, "trim") || "",
     };
     const tires = await tireProvider.searchByVehicle(v);
+    const label = `${v.year} ${v.make} ${v.model} ${v.trim}`;
     return {
       tires,
       ctx: {
-        heading: `Tires that fit your ${v.year} ${v.make} ${v.model} ${v.trim}`,
+        heading: `Tires that fit your ${label}`,
         subheading: "Guaranteed fitment from our vehicle database.",
         by,
+        label,
         fits: true,
+        narrowed: true,
       },
     };
   }
@@ -123,7 +128,9 @@ async function baseSet(
         heading: `Tires in size ${sizeToString(size)}`,
         subheading: "All tires matching your exact size.",
         by,
+        label: sizeToString(size),
         fits: false,
+        narrowed: true,
       },
     };
   }
@@ -137,7 +144,9 @@ async function baseSet(
         heading: `${brand} tires`,
         subheading: `Every ${brand} tire in the catalog.`,
         by,
+        label: brand,
         fits: false,
+        narrowed: false,
       },
     };
   }
@@ -151,7 +160,9 @@ async function baseSet(
         heading: `${typeLabel(type)} tires`,
         subheading: `Browse our ${typeLabel(type).toLowerCase()} range.`,
         by,
+        label: typeLabel(type),
         fits: false,
+        narrowed: false,
       },
     };
   }
@@ -163,7 +174,9 @@ async function baseSet(
       heading: "All tires",
       subheading: "Browse the full catalog, then filter to your needs.",
       by,
+      label: "",
       fits: false,
+      narrowed: false,
     },
   };
 }
